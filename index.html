@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --primary-color:#14bcab;
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: var(--primary-color);
+            border-radius: 15px;
+           
+            box-shadow: 5px 5px 5px black;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+
+        }
+        
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+        }
+        .utility-ctn{
+            width: 100%;
+            height: 50px;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+           
+        }
+        .heading{
+            color: #1e1e1e;
+            font-family: sans-serif;
+        }
+        button{
+            background-color: transparent;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+        }
+        .game-box{
+            
+            margin-top: 20px;
+            display: grid;
+            gap: 5px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            margin: 15px;
+            background-color: #7c7c7c;
+            
+        }
+        .cell{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            font-size: 3.9rem;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:var(--primary-color);
+           
+        }
+        .X::after{
+            content: 'X';
+        }
+        .O::before{
+            content: 'O';
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">TIC TAC TOE</h2>
+        <div class="utility-ctn">
+            <h2 class="heading">X turns</h2>
+        <button class="resetbtn">Reset</button>
+        </div> <div class="game-box">
+       <div class="cell"></div>
+       <div class="cell"></div>
+       <div class="cell"></div>
+       <div class="cell"></div>
+       <div class="cell"></div>
+       <div class="cell"></div>
+       <div class="cell"></div>
+       <div class="cell"></div>
+       <div class="cell"></div>
+    </div>
+    </div>
+    <script>
+      const heading = document.querySelector('.heading')
+const resetbtn= document.querySelector('.resetbtn')
+const gameCells=document.querySelectorAll('.cell')
+var isXturn = true;
+var count = 0;
+
+const checkGameStatus=() =>{
+const indec0classlist = gameCells[0].classList;
+const indec1classlist = gameCells[1].classList;
+const indec2classlist = gameCells[2].classList;
+const indec3classlist = gameCells[3].classList;
+const indec4classlist = gameCells[4].classList;
+const indec5classlist = gameCells[5].classList;
+const indec6classlist = gameCells[6].classList;
+const indec7classlist = gameCells[7].classList;
+const indec8classlist = gameCells[8].classList;
+
+if (indec0classlist.contains('O')) {
+    if (indec1classlist.contains('O') && indec2classlist.contains('O') ) {
+        alert("O WON");
+   
+    }
+    
+}
+if (indec0classlist.contains('X')) {
+    if (indec1classlist.contains('X') && indec2classlist.contains('X') ) {
+        alert("X WON");
+        
+    }
+    
+}
+if (indec3classlist.contains('')) {
+    if (indec4classlist.contains('O') && indec5classlist.contains('O') ) {
+        alert("O WON");
+        
+    }
+    
+}
+if (indec3classlist.contains('X')) {
+    if (indec4classlist.contains('X') && indec5classlist.contains('X') ) {
+        alert("X WON");
+        
+    }
+    
+}
+if (indec6classlist.contains('O')) {
+    if (indec7classlist.contains('O') && indec8classlist.contains('O') ) {
+        alert("O WON");
+        
+    }
+    
+}
+if (indec6classlist.contains('X')) {
+    if (indec7classlist.contains('X') && indec8classlist.contains('X') ) {
+        alert("X WON");
+        
+    }
+}
+if (indec0classlist.contains('O')) {
+    if (indec4classlist.contains('O') && indec8classlist.contains('O') ) {
+        alert("O WON");
+        
+    }
+    
+}
+if (indec0classlist.contains('X')) {
+    if (indec4classlist.contains('X') && indec8classlist.contains('X') ) {
+        alert("X WON");
+        
+    }
+}
+
+if (indec2classlist.contains('O')) {
+    if (indec4classlist.contains('O') && indec6classlist.contains('O') ) {
+        alert("O WON");
+        
+    }
+    
+}
+if (indec2classlist.contains('X')) {
+    if (indec4classlist.contains('X') && indec6classlist.contains('X') ) {
+        alert("X WON");
+        
+    }
+}
+if (indec0classlist.contains('O')) {
+    if (indec3classlist.contains('O') && indec6classlist.contains('O') ) {
+        alert("O WON");
+        
+    }
+    
+}
+if (indec0classlist.contains('X')) {
+    if (indec3classlist.contains('X') && indec6classlist.contains('X') ) {
+        alert("X WON");
+        
+    }
+}
+if (indec1classlist.contains('O')) {
+    if (indec4classlist.contains('O') && indec7classlist.contains('O') ) {
+        alert("O WON");
+        
+    }
+    
+}
+if (indec1classlist.contains('X')) {
+    if (indec4classlist.contains('X') && indec7classlist.contains('X') ) {
+        alert("X WON");
+        
+    }
+}
+if (indec2classlist.contains('O')) {
+    if (indec5classlist.contains('O') && indec8classlist.contains('O') ) {
+        alert("O WON");
+        
+        
+    }
+    
+}
+if (indec2classlist.contains('X')) {
+    if (indec5classlist.contains('X') && indec8classlist.contains('X') ) {
+        alert("X WON");
+        
+    }
+}
+
+
+}
+function cellHandler(event){
+const classList = event.target.classList;
+if (classList.length>1) {
+    return
+}
+
+if (isXturn) {
+    classList.add("X");
+    isXturn=false;
+    heading.textContent="O's Turn";
+    
+    
+}
+
+else{
+    classList.add("O");
+    isXturn=true;
+    heading.textContent="X's Turn";
+    
+}
+count = count+1;
+console.log(count);
+if (count>=5) {
+    checkGameStatus()
+}
+
+ }
+for(cell of gameCells){
+    cell.addEventListener('click',cellHandler)
+}
+const  resetHandler= () => {
+    window.location.reload()
+}
+resetbtn.addEventListener('click',resetHandler);
+
+    </script>
+</body>
+</html>
